@@ -7,7 +7,7 @@ This version gives a ROC AUC score 0.995177 and the 8th place on the leaderboard
 
 Since the [Standard Model] (https://en.wikipedia.org/wiki/Standard_Model) of particle physics cannot explain some
 observed physical phenomena, physicist are trying to develop extended theories, commonly labelled as physics
-beyond the Standard Model or "new physics". A clear sign of new physics would be the discovery of charged lepton flavour
+beyond the Standard Model or "[new physics](https://en.wikipedia.org/wiki/Physics_beyond_the_Standard_Model)". A clear sign of new physics would be the discovery of charged lepton flavour
 violation, a phenomenon which cannot occur according to the Standard Model. The goal of the challenge was to help physicists to discover this phenomenon by developing a machine learning model which would maximize the discriminating power between 
 signal events (where the violation did occur) and background events (where it did not). 
 
