@@ -8,17 +8,16 @@ This version generates a ROC AUC score 0.995177 and gives the 8th place on the l
 Since the [Standard Model] (https://en.wikipedia.org/wiki/Standard_Model) of particle physics cannot explain some
 observed physical phenomena, physicist are trying to develop extended theories, commonly labelled as physics
 beyond the Standard Model or "new physics". A clear sign of new physics would be the discovery of charged lepton flavour
-violation, a phenomenon which is not allowed in the Standard Model. The goal of the challenge was to help physicists to
-discover this phenomenon by developing a machine learning model which would maximize the discriminating power between 
+violation, a phenomenon which cannot occur according to the Standard Model. The goal of the challenge was to help physicists to discover this phenomenon by developing a machine learning model which would maximize the discriminating power between 
 signal events (where the violation did occur) and background events (where it did not). 
 
 In this project we used real data from the [LHCb experiment] (http://lhcb-public.web.cern.ch/lhcb-public/)
 at the [Large Hadron Collider](http://home.cern/topics/large-hadron-collider) (Switzerland).
 Since the searched phenomenon has not been discovered yet, the real background data was mixed with simulated datasets
-of the decay. This nature of data representation introduced two additional challenges into a modeling process:
+of the decay. This introduced two additional challenges into a modeling process:
 
 - Since the classifier was trained on simulation data for the signal and real
-  data for the background, it was possible to reach a high performance
+  data for the background, it was possible to distinguish between sinal and background simply
   by picking features that are not perfectly modeled in the simulation. To check our models for [this pattern](https://www.kaggle.com/c/flavours-of-physics/details/agreement-test)
   we were provided with additional data (both real and simulated) on the similar, but observed decay.
   The Kolmogorov–Smirnov (KS) test was used to evaluate the differences between the classifier distributions on both
@@ -31,9 +30,11 @@ of the decay. This nature of data representation introduced two additional chall
   
 ### Model Description
 
-The main challenge of this competition was developing a model which produces the high ROC AUC score and passes KS
-and CvM tests. To address the first requirement, I used experimentation and removed some not perfectly
-modeled features from data trying not to hurt the performance of the classifier at the same time.
+The main challenge of this competition was developing a model which maximizes the probability of detecting
+the decay and at the sane time passes KS and CvM tests. 
+
+To address the first requirement, I used experimentation and removed some not perfectly
+modeled features from data trying not to affect the performance of the classifier at the same time.
 
 Addressing the second
 requirement was much harder since the signal can occur only in a certain region of values of the tau-mass
@@ -43,12 +44,10 @@ twofold:
 
 - I used the Uniform Gradient Boosting Classifier from the python library
   [hep_ml](https://arogozhnikov.github.io/hep_ml/) which is designed specifically for high energy physics. This clasifier is
-  able to maximize the objective function and at the same time minimize the correlation of predictions with certain specified
-  variables.
+  able to maximize the objective function and at the same time minimize the correlation of predictions with certain specified variables.
 
 - my model was constructed as an ensemble of two models: the first one was designed primarily for ROC AUC maximization while
-  the goal of the second model was fighting the correlation with the tau-mass. I obtained my final predictions by finding the
-  optimal weights for ensembling these models.
+  the goal of the second model was fighting the correlation with the tau-mass. I obtained my final predictions by finding      the optimal weights for ensembling these models.
 
 The first model was constructed using a three-level learning architecture.
 At the first level I used [the stacked generalization algorithm](http://machine-learning.martinsewell.com/ensembles/stacking/)
@@ -64,7 +63,7 @@ to construct meta-features for both train and test data using signal predictions
 - SGD Classifier (sklearn)
 - Gradient Boosting Trees Classifier (XGBoost)
 
-At the second level I used XGBoost (XGB), Random Forest (RF) and Uniform Gradient Boosting (UGB) classifiers to obtain three vectors of predicted probabilities.
+At the second level I used XGBoost (XGB), Random Forest (RF) and Uniform Gradient Boosting (UGB) classifiers to obtain three different vectors of predicted probabilities.
 
 At the third level, I combined obtained predictions using the following formula:
 
@@ -72,10 +71,10 @@ At the third level, I combined obtained predictions using the following formula:
    
 The 3-fold local CV score for this model was 0.994635.
 
-The second model consisted of a single XGBoost classifier which was purposely "undertrained" by using shallow tre structure
+The second model consisted of a single XGBoost classifier which was purposely "undertrained" by using shallow tree structure
 and a relatively high learning rate. The 3-fold local CV score for this model was 0.984374.
 
-The final vector of predictions was obtained using the following formula:
+The final vector of predictions was obtained by combining predictions of two models in the following way:
 
   ``preds_ensemble = preds_model1^0.585 * preds_model2^0.415``
 
