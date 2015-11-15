@@ -85,7 +85,9 @@ The final vector of predicted probabilities was obtained by combining prediction
 into folder ```./data``` (you may need to adjusts its path according to your location using ```/kaggle_flavours_of_physics//flavours_utils/paths.py```). You must also create a folder ```./submission``` in the same subfolder. This folder
 will be used for saving predictions.
 
-- run ```/kaggle_flavours_of_physics/ensemble/ensemble_submission.py``` to generate the file of predictions in csv format.   The stacking procedure used in the first model is computationally intensive and may take up to 12 hours to complete (it took me 11 hours on my 4-core 2.60GHz laptop with 16 GB RAM).
+- run ```/kaggle_flavours_of_physics/ensemble/ensemble_submission.py``` to generate the file of predictions in csv format.   
+
+Warning: the stacking procedure used in the first model is computationally intensive and may take up to 12 hours to complete (it took me 11 hours on my 4-core 2.60GHz laptop with 16 GB RAM).
  
 ### Dependencies
 - Python 3.4 (Python 2.7 would also work, just type: ```from __future__ import print_function``` in the beginning of the script)
