@@ -37,8 +37,8 @@ To address the first requirement, I used experimentation and removed some not pe
 modeled features from data trying not to affect the performance of the classifier at the same time.
 
 Addressing the second
-requirement was much harder since the signal can occur only within a certain region of values of the tau-mass
-and therefore is correlated with mass by definition. This means that any aggressive classifier which objective is
+requirement was much harder since the signal can occur only within a certain region of the tau-mass values
+and therefore is correlated with the tau-mass by definition. This means that any aggressive classifier which objective is
 pure maximization of the ROC AUC score would eventually be correlated with the tau-mass. My solution to this problem was
 twofold:
 
