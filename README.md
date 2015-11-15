@@ -50,7 +50,7 @@ twofold:
   the goal of the second model was fighting the correlation with the tau-mass. I obtained my final predictions by finding      the optimal weights for ensembling these models.
 
 Specifically, the first model was constructed using a three-level learning architecture.
-At the first level I used [the stacked generalization algorithm](http://machine-learning.martinsewell.com/ensembles/stacking/)
+At the first level I used the [stacked generalization algorithm](http://machine-learning.martinsewell.com/ensembles/stacking/)
 to construct meta-features for both train and test data using signal predictions of 15 different models:
 
 - KNeighbor Classifier (sklearn) with 5, 10, 20, 40, 80, 160, 320 neighbors
