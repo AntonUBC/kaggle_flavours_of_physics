@@ -19,14 +19,14 @@ of the decay. This introduced two additional challenges into a modeling process:
 - Since the classifier was trained on simulation data for the signal and real
   data for the background, it was possible to distinguish between signal and background simply
   by picking features that are not perfectly modeled in the simulation. To check our models for the presence of [this pattern](https://www.kaggle.com/c/flavours-of-physics/details/agreement-test)
-  we were provided with additional data (both real and simulated) on the similar, but observed decay.
+  we were provided with additional data (both real and simulated) on the observed and well studied decay with similar characteristics.
   The Kolmogorov–Smirnov (KS) test was used to evaluate the differences between the classifier distributions on both
-  samples. The submission requirement was that the KS-value of the test to be smaller than 0.09.
+  samples of the observed decay. The submission requirement was that the KS-value of the test to be smaller than 0.09.
   
 - Another requirement was that the classifier must be [uncorrelated with the τ-lepton mass](https://www.kaggle.com/c/flavours-of-physics/details/correlation-test), as
   such correlations can cause an artificial signal-like mass peak or lead to incorrect
-  background estimations. We performed the Cramer–von Mises (CvM)
-  test to ensure the absence of such correlation. The CvM-value of the test was required to be smaller than 0.002.
+  background estimations. In other words, since by definition the searched decay can occur only within a certain tau-mass range, a classifier could perform very well by simply assigning high probabilities to all observations within this range. However, such classifier would not be useful since this range can contain a large number of background observations as well. 
+We performed the Cramer–von Mises (CvM) test to ensure the absence of such correlation. The CvM-value of the test was required to be smaller than 0.002.
   
 ### Model Description
 
