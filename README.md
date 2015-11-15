@@ -23,7 +23,7 @@ of the decay. This introduced two additional challenges into a modeling process:
   The Kolmogorov–Smirnov (KS) test was used to evaluate the differences between the classifier distributions on both
   samples of the observed decay. The submission requirement was that the KS-value of the test to be smaller than 0.09.
   
-- Another requirement was that the classifier must be [uncorrelated with the τ-lepton mass](https://www.kaggle.com/c/flavours-of-physics/details/correlation-test), as
+- Another requirement was that the classifier must be [uncorrelated with the tau-lepton mass](https://www.kaggle.com/c/flavours-of-physics/details/correlation-test), as
   such correlations can cause an artificial signal-like mass peak or lead to incorrect
   background estimations. In other words, since by definition the searched decay can occur only within a certain tau-mass range, a classifier could perform very well by simply assigning high probabilities to all observations within this range. However, such classifier would not be useful since this range can contain a large number of background observations as well. 
 We performed the Cramer–von Mises (CvM) test to ensure the absence of such correlation. The CvM-value of the test was required to be smaller than 0.002.
