@@ -34,7 +34,7 @@ The main challenge of this competition was developing a model which maximizes th
 the decay and at the sane time passes KS and CvM tests. 
 
 To address the first requirement, I used experimentation and removed some not perfectly
-modeled features from data trying not to affect the performance of the classifier at the same time.
+modeled features at the same time trying not to worsen performance of the classifier.
 
 Addressing the second
 requirement was much harder since the signal can occur only within a certain region of the tau-mass values
