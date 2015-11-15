@@ -49,7 +49,7 @@ twofold:
 - my model was constructed as an ensemble of two models: the first one was designed primarily for ROC AUC maximization while
   the goal of the second model was fighting the correlation with the tau-mass. I obtained my final predictions by finding      the optimal weights for ensembling these models.
 
-The first model was constructed using a three-level learning architecture.
+Specifically, the first model was constructed using a three-level learning architecture.
 At the first level I used [the stacked generalization algorithm](http://machine-learning.martinsewell.com/ensembles/stacking/)
 to construct meta-features for both train and test data using signal predictions of 15 different models:
 
