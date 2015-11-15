@@ -63,20 +63,20 @@ to construct meta-features for both train and test data using signal predictions
 - SGD Classifier (sklearn)
 - Gradient Boosting Trees Classifier (XGBoost)
 
-At the second level I used XGBoost (XGB), Random Forest (RF) and Uniform Gradient Boosting (UGB) classifiers to obtain three different vectors of predicted probabilities.
+At the second level I used XGBoost (XGB), Random Forest (RF) and Uniform Gradient Boosting (UGB) classifiers to obtain three different vectors of predicted probabilities. 
 
-At the third level, I combined obtained predictions using the following formula:
+Finally, I combined obtained predictions using the following formula:
 
-   ``preds_model1 = 0.3*(preds_xgb^0.65 * preds_rf^0.35) + 0.7*preds_ugb``
+   ```preds_model1 = 0.3*(preds_xgb^0.65 * preds_rf^0.35) + 0.7*preds_ugb```
    
-The 3-fold local CV score for this model was 0.994635.
+I found the optimal weights for this ensemble by using a hyper-parameter
+search procedure of [hyperopt](https://github.com/hyperopt/hyperopt) library. The 3-fold local CV score for this model was 0.994635.
 
-The second model consisted of a single XGBoost classifier which was purposely "undertrained" by using shallow tree structure
-and a relatively high learning rate. The 3-fold local CV score for this model was 0.984374.
+The second model consisted of a single XGBoost classifier which was purposely "undertrained" by using a shallow tree structure and a relatively high learning rate. The 3-fold local CV score for this model was 0.984374.
 
 The final vector of predictions was obtained by combining predictions of two models in the following way:
 
-  ``preds_ensemble = preds_model1^0.585 * preds_model2^0.415``
+  ```preds_ensemble = preds_model1^0.585 * preds_model2^0.415```
 
 ### Instruction
 
