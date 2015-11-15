@@ -17,7 +17,7 @@ Since the searched phenomenon has not been discovered yet, the real background d
 of the decay. This introduced two additional challenges into a modeling process:
 
 - Since the classifier was trained on simulation data for the signal and real
-  data for the background, it was possible to distinguish between sinal and background simply
+  data for the background, it was possible to distinguish between signal and background simply
   by picking features that are not perfectly modeled in the simulation. To check our models for [this pattern](https://www.kaggle.com/c/flavours-of-physics/details/agreement-test)
   we were provided with additional data (both real and simulated) on the similar, but observed decay.
   The Kolmogorov–Smirnov (KS) test was used to evaluate the differences between the classifier distributions on both
@@ -26,7 +26,7 @@ of the decay. This introduced two additional challenges into a modeling process:
 - Another requirement was that the classifier must be [uncorrelated with the τ-lepton mass](https://www.kaggle.com/c/flavours-of-physics/details/correlation-test), as
   such correlations can cause an artificial signal-like mass peak or lead to incorrect
   background estimations. We performed the Cramer–von Mises (CvM)
-  test to ensure the absense of such correlation. The CvM-value of the test was required to be smaller than 0.002.
+  test to ensure the absence of such correlation. The CvM-value of the test was required to be smaller than 0.002.
   
 ### Model Description
 
@@ -43,7 +43,7 @@ pure maximization of the ROC AUC score would eventually be correlated with the t
 twofold:
 
 - I used the Uniform Gradient Boosting Classifier from the python library
-  [hep_ml](https://arogozhnikov.github.io/hep_ml/) which is designed specifically for high energy physics. This clasifier is
+  [hep_ml](https://arogozhnikov.github.io/hep_ml/) which is designed specifically for high energy physics. This classifier is
   able to maximize the objective function and at the same time minimize the correlation of predictions with certain specified variables.
 
 - my model was constructed as an ensemble of two models: the first one was designed primarily for ROC AUC maximization while
