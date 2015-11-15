@@ -1,3 +1,6 @@
+# This script trains two separate models and ensembles their predictions
+# to construct the vector of predicted probabilities for the final submission
+
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import LogisticRegression, SGDClassifier
@@ -14,6 +17,9 @@ from wrappers import models
 
 
 def Model1():
+    
+# Model 1 is an ensemble of XGBoost, Random Forest and Uniform Gradient Boosting Classifiers
+# which are trained using the stacked data
     
     model = 1    # set the model number for feature engineering
     n_folds = 3 # set the number of folders for generating meta-features
@@ -81,7 +87,8 @@ def Model1():
     clfs = [clf1, clf2, clf3, clf4, clf5, clf6, clf7, clf8, clf9, clf10, clf11, clf12, clf13, clf14, clf15]    
         
     # Construct stacked datasets
-    train_blend, test_blend, train_probs, test_probs = utils.StackModels(train[features], test[features], train.signal.values, clfs, n_folds)                                                                                      
+    train_blend, test_blend, train_probs, test_probs = utils.StackModels(train[features], test[features], train.signal.values,
+                                                                         clfs, n_folds)                                                                                      
     
     # Construct data for uniform boosting
     columns = ['p%s ' % (i) for i in range(0, n_stack)]
@@ -126,6 +133,8 @@ def Model1():
 
 
 def Model2():
+    
+# Model 2 is a single XGBoost classifier "undertrained" to reduce correlation with tau-mass    
         
     model = 2    # set the model number for feature engineering
                                                          
