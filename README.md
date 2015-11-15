@@ -87,7 +87,7 @@ will be used for saving predictions.
 
 - run ```/kaggle_flavours_of_physics/ensemble/ensemble_submission.py``` to generate the file of predictions in csv format.   
 
-Warning: the stacking procedure used in the first model is computationally intensive and may take up to 12 hours to complete (it took me 11 hours on my 4-core 2.60GHz laptop with 16 GB RAM).
+Warning: the stacking procedure used in the first model is computationally intensive and may take up to 12 hours to complete (it took me 10 hours on my 4-core 2.60GHz laptop with 16 GB RAM).
  
 ### Dependencies
 - Python 3.4 (Python 2.7 would also work, just type: ```from __future__ import print_function``` in the beginning of the script)
