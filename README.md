@@ -64,7 +64,7 @@ to construct meta-features for both train and test data using signal predictions
 - Gradient Boosting Trees Classifier (XGBoost)
 
 At the second level I trained XGBoost (XGB), Random Forest (RF) and Uniform Gradient Boosting (UGB) classifiers
-on the original data combined with meta-features to obtain three different vectors of predicted probabilities. 
+on the original data combined with meta-features of the first stage to obtain three different vectors of predicted probabilities. 
 
 Finally, I combined obtained predictions using the following formula:
 
