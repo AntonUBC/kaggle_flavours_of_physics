@@ -82,7 +82,7 @@ The final vector of predicted probabilities was obtained by combining prediction
 ### Instruction
 
 - download train and test data from the [competition website](https://www.kaggle.com/c/flavours-of-physics) and put all the data
-into folder ```./data``` (you may need to adjusts its path according to your location using ```/kaggle_flavours_of_physics//flavours_utils/paths.py```). You must also create a folder ```./submission``` in the same subfolder. This folder
+into folder ```./data``` (you will need to specify the path to this directory using ```/kaggle_flavours_of_physics/flavours_utils/paths.py```). You must also create a folder ```./submission``` in the same subfolder. This folder
 will be used for saving predictions.
 
 - run ```/kaggle_flavours_of_physics/ensemble/ensemble_submission.py``` to generate the file of predictions in csv format.   
