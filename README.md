@@ -71,9 +71,9 @@ Finally, I combined obtained predictions using the following formula:
    ```preds_model1 = 0.3*(preds_xgb^0.65 * preds_rf^0.35) + 0.7*preds_ugb```
    
 I found the optimal weights for this ensemble by using a hyper-parameter
-search procedure of the python library [hyperopt](https://github.com/hyperopt/hyperopt). The 3-fold local CV score of this model was 0.994635.
+search procedure of the python library [hyperopt](https://github.com/hyperopt/hyperopt). The 3-fold CV score of this model was 0.994635.
 
-The second model consisted of a single XGBoost classifier which was purposely "undertrained" by using a shallow tree structure and a relatively high learning rate. The 3-fold local CV score of this model was 0.984374.
+The second model consisted of a single XGBoost classifier which was purposely "undertrained" by using a shallow tree structure and a relatively high learning rate. The 3-fold CV score of this model was 0.984374.
 
 The final vector of predicted probabilities was obtained by combining predictions of two models in the following way:
 
