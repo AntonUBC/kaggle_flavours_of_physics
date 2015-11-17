@@ -89,9 +89,7 @@ def Model1():
     # Construct stacked datasets
     train_blend, test_blend, train_probs, test_probs = utils.StackModels(train[features], test[features], 
                                                                          train.signal.values, clfs, n_folds)                                                                                      
-    train_blend, test_blend, train_probs, test_probs = utils.StackModels(train[features], test[features], train.signal.values,
-                                                                         clfs, n_folds)                                                                                      
-
+                                                                             
     # Construct data for uniform boosting
     columns = ['p%s ' % (i) for i in range(0, n_stack)]
     meta_train = pd.DataFrame({columns[i]: train_probs[:, i] for i in range(0, n_stack)})
