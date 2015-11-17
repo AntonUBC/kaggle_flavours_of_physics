@@ -47,7 +47,7 @@ def StackModels(train, test, y, clfs, n_folds): # train data (pd data frame), te
                                                 # list of models to stack, number of folders
 
 # StackModels() performs Stacked Aggregation on data: it uses n different classifiers to get out-of-fold 
-# predictions for target data. It uses the whole training dataset to obtain signal predictions for test.
+# predicted probabilities of signal for train data. It uses the whole training dataset to obtain predictions for test.
 # This procedure adds n meta-features to both train and test data (where n is number of models to stack).
 
     print("Generating Meta-features")
