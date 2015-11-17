@@ -43,10 +43,11 @@ def save_submission(predictions):
     submission.to_csv(path_sample_submission, index=False)
 
 
-def StackModels(train, test, y, clfs, n_folds): # train data (pd data frame), test data (pd date frame), Target data, List of clfs to stack, number of folders
+def StackModels(train, test, y, clfs, n_folds): # train data (pd data frame), test data (pd date frame), Target data,
+                                                # list of models to stack, number of folders
 
 # StackModels() performs Stacked Aggregation on data: it uses n different classifiers to get out-of-fold 
-# predictions for target data. It uses the whole training dataset to obtain target predictions for test.
+# predictions for target data. It uses the whole training dataset to obtain signal predictions for test.
 # This procedure adds n meta-features to both train and test data (where n is number of models to stack).
 
     print("Generating Meta-features")
