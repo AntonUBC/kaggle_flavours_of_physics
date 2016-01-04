@@ -25,7 +25,7 @@ of the decay. This introduced two additional challenges into a modeling process:
   
 - Another requirement was that the classifier must be [uncorrelated with the tau-lepton mass](https://www.kaggle.com/c/flavours-of-physics/details/correlation-test), as
   such correlations can cause an artificial signal-like mass peak or lead to incorrect
-  background estimations. In other words, since by definition the searched decay can occur only within a certain tau-mass range, a classifier could perform very well by simply assigning high probabilities to all observations within this range. However, such classifier would not be useful since this range can contain a large number of background observations as well. 
+  background estimations. In other words, since by definition the searched decay can occur only within a certain tau-mass range, a classifier could perform very well by simply assigning high probabilities to all observations within this range. However, such classifier would not be useful because this range can contain a large number of background observations as well. 
 We performed the Cramer–von Mises (CvM) test to ensure the absence of such correlation. The CvM-value of the test was required to be smaller than 0.002.
   
 ### Model Description
