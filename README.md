@@ -13,7 +13,7 @@ signal events (where the violation did occur) and background events (where it di
 
 In this project we used real data from the [LHCb experiment] (http://lhcb-public.web.cern.ch/lhcb-public/)
 at the [Large Hadron Collider](http://home.cern/topics/large-hadron-collider) (Switzerland).
-Since the searched phenomenon has not been discovered yet, the real background data was mixed with simulated datasets
+Because the searched phenomenon has not been discovered yet, the real background data was mixed with simulated datasets
 of the decay. This introduced two additional challenges into a modeling process:
 
 - Since the classifier was trained on simulation data for the signal and real
