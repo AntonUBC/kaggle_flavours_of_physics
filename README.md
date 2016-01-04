@@ -21,7 +21,7 @@ of the decay. This introduced two additional challenges into a modeling process:
   by picking features that are not perfectly modeled in the simulation. To check our models for the presence of [this pattern](https://www.kaggle.com/c/flavours-of-physics/details/agreement-test)
   we were provided with additional data (both real and simulated) on the observed and well studied decay with similar characteristics.
   The Kolmogorov–Smirnov (KS) test was used to evaluate the differences between the classifier distributions on both
-  samples of the observed decay. The submission requirement was that the KS-value of the test to be smaller than 0.09.
+  samples of the observed decay. The submission requirement was the KS-value of the test to be smaller than 0.09.
   
 - Another requirement was that the classifier must be [uncorrelated with the tau-lepton mass](https://www.kaggle.com/c/flavours-of-physics/details/correlation-test), as
   such correlations can cause an artificial signal-like mass peak or lead to incorrect
