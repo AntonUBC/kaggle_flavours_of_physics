@@ -1,4 +1,4 @@
-## My solution to [Kaggle Flavours of Physics challenge] (https://www.kaggle.com/c/flavours-of-physics)
+## Solution to [Kaggle Flavours of Physics Challenge] (https://www.kaggle.com/c/flavours-of-physics)
 
 This is a slightly improved version of my submitted solution (weighted ROC AUC score 0.994894 and the 9th place out of 673 teams).
 This version gives a ROC AUC score 0.995177 and the 8th place on the leaderboard.
