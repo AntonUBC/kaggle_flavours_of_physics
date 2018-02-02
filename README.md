@@ -31,7 +31,7 @@ We performed the Cramer–von Mises (CvM) test to ensure the absence of such cor
 ### Model Description
 
 The main challenge of this competition was developing a model which maximizes the probability of detecting
-the decay and at the sane time passes KS and CvM tests. 
+the decay and at the same time passes KS and CvM tests. 
 
 To address the first requirement, I used experimentation and removed some not perfectly
 modeled features at the same time trying not to worsen performance of the classifier.
